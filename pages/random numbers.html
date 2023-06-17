@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Числа</title>
+</head>
+<body>
+	<style type="text/css">
+		body {
+			background-color: yellow;
+			color: blue;
+			font-size: 25px;
+		}
+	</style>
+	<script type="text/javascript">
+		let min = +prompt("Введіть мінімальне число", "1");
+		let max = +prompt("Введіть максимальне число", "10");
+		let number; 
+		for(let i = 1; i<=1000; i++) {
+			number=min+Math.random()*(max-min);
+			document.writeln(number.toFixed(2));
+			
+		}
+		document.write("<hr>")
+		for(let i = 1; i<=1000; i++) {
+			number=min+Math.random()*(max-min);
+			document.writeln(number);
+		}
+	</script>
+</body>
+</html>

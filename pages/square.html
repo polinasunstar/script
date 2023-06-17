@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Степінь числа</title>
+</head>
+<style>
+    body {
+        background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20200530/pngtree-cute-hand-drawn-style-mathematics-education-pink-plaid-background-image_337364.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .main {
+        width: 250px;
+        height: 40px;
+        margin-left: 42px;
+        margin-top: 30px;
+    }
+    #calc {
+        height: 500px;
+        width: 400px;
+        background-color: rgb(164, 164, 237);
+        margin-top: 400px;
+        margin-left: 40%;
+    }
+    #answer {
+        margin-top: 120px;
+        margin-left: 42px;
+        font-size: 25px;
+    }
+p {
+
+    font-size: 20px;
+    margin-left: 42px;
+}
+.button-32 {
+  background-color: #fff000;
+  border-radius: 12px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 160px;
+  margin-left: 200px;
+  margin-top: 20px;
+
+.button-32:not(:disabled):hover,
+.button-32:not(:disabled):focus {
+  outline: 0;
+  background: #f4e603;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+}
+
+.button-32:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+    
+</style>
+<body>
+    <div id="calc">
+    <form name="square" action="javascript:square()">
+        <p>Введіть число x:</p><input class="main" name="first" type="text" value="" style="font-size: 20px; text-align: center;">
+        <p>Введіть число n:</p><input class="main" name="second" type="text" value="" style="font-size: 20px; text-align: center;">
+        <button class="button-32" role="button" onclick="square()">Button 32</button>
+</form>
+    <p id="answer">Відповідь: </p><span id="answer"></span>
+</div>
+    <script type="text/javascript">
+            function square() {
+	let x = +document.square.first.value;
+	let n = +document.square.second.value;
+    let sol = document.getElementById("answer");
+	let result;
+    let string = ' ';
+	string += result=x**n;
+    sol.innerHTML = string;
+}
+    </script>
+</body>
+</html>

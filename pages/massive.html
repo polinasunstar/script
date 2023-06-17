@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generator of Compliments</title>
+</head>
+<style>
+	body {
+		background-image: url(https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg);
+		background-size:cover;
+		background-repeat: no-repeat;
+        background-attachment: fixed;
+	}
+	#form {
+	height: 400px;
+	width: 500px; 
+	background-color: rgba(157, 246, 246, 0.612);
+	margin-left: 40%;
+	margin-top: 120px;
+	}
+	.selection {
+		margin-left: 130px;
+		margin-top: 120px;
+		height: 50px;
+		border-radius: 20px;
+		background-color: rgba(222, 172, 245, 0.56);
+	}
+	.ok {
+
+		margin-top: 120px;
+		margin-left: 150px;
+		height: 50px;
+		width: 195px;
+		font-size: 30px;
+		background-color: #0078d0;
+  border: 0;
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  outline: 0;
+  padding: 16px 21px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-71:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
+}
+
+.button-71:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .button-71 {
+    padding: 16px 48px;
+  }
+	}
+	#out {
+		float: left;
+		font-size: 30px;
+	}
+	p {
+		font-size: 25px;
+		margin-left: 45px;
+	}
+
+</style>
+<body>
+<div id="form">
+	<form name="first" action="javascript:compliments()">
+		<p>Введдіть кількість компліментів</p>
+		<input class="selection" name="block" type="text" value="" style="font-size: 23px; text-align: center;">
+		<button class="ok" role="button">Підтвердити</button>
+	</form>
+</div>	
+<span id="out"></span>
+	<script type="text/javascript">
+		function compliments() {
+		let input = +document.first.block.value;
+		let sol = document.getElementById("out");
+		let compliments=["smart","clever","kind","hardworking","funny","lifefull","cute","strong","genius","logical","gorgeous"];
+		let animals=['pig', 'rabbit', 'horse','wolf', 'dolphin', 'fox', 'dog', 'giraffe', 'cat', 'snake'];
+		let colors=['#ff0000', '#0066ff', '#c44dff', '#ffa31a', '#00cc00', '#ff99ff', '#ffcc33', '#ff1a75', '#99ff99'];
+		let string= ''
+			for(let i=1;i<=input;i++) {
+				let rand=Math.floor(Math.random()*compliments.length);
+				let rand2=Math.floor(Math.random()*animals.length);
+				let rand3=Math.floor(Math.random()*colors.length);
+				let rand4=Math.floor(Math.random()*colors.length);
+				let rand5=Math.floor(Math.random()*colors.length);
+			string +=`<p style="color:${colors[rand5]}">${i}) You are so <span style="color:${colors[rand3]}">${compliments[rand]}</span> as a <span style="color:${colors[rand4]}">${animals[rand2]}</span></p>`;
+			}
+			sol.innerHTML = string;
+			}
+		compliments()
+		</script>
+	
+</body>
+</html>

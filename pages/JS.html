@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+</head>
+<style type="text/css">
+	body {
+		background-color: lightgreen;
+		font-size: 50px;
+		color: red;
+	}
+  #result {
+    width: 260px;
+    height: 75px;
+    background-color: #66e0ff;
+    color: white;
+    border-radius: 20px;
+    border: solid 1px white;
+    font-size: 39px;
+ }
+ #result:hover {
+  background-color: purple;
+  color: red
+
+ }
+ .side {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  font-size: 23px;
+ }
+</style>
+<body>
+	<p>Привіт! Вітаю Вас у 2 семестрі!</p>
+  <script type="text/javascript">
+ function triangle() {
+ let a =  +document.Triangle_1.a.value;
+    let b =+document.Triangle_1.b.value;
+    let c =+document.Triangle_1.c.value;
+    let sol = document.getElementById("out");
+    let P=a+b+c;
+    let p=P/2;
+    let S
+    let string = " ";
+      if (a<=b||b<=c||a<=c||(a+b)<=c||(a+c)<=b||(b+c)<=a) {
+      string +="Такого трикутника не існує";
+       }
+    else {
+      P=a+b+c
+      p=P/2
+ S=stMath.sqrt(p*(p-a)*(p-b)*(p-c));
+ string +="Периметр трикутника дорівнює "+P+".<br> Площа трикутника дорівнює "+S+".";
+}   
+
+sol.innerHTML = string;
+}
+
+
+  </script>
+<form name="Triangle_1" action="javascript:triangle()">
+  Введіть сторону a
+  <input  class="side" type="text" name="a" value="">
+   Введіть сторону b
+   <input  class="side" type="text" name="b" value="">
+    Введіть сторону c
+    <input  class="side" type="text" name="c" value="">
+    <input id="result" type="submit" value="Розрахувати">
+  </form>
+    <span id="out" style="text-align: center;" >Знайти трикутник!</span>
+ 
+</body>
+</html>

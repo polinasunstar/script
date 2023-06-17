@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<canvas id="first" width="800px" height="800px";" ></canvas>
+    <script type="text/javascript">
+   
+     
+      let colors =["#66ffcc", "#ffff00", "#00aaff", "#ff8c1a", "#9900cc", "#bf80ff", "#ff1a75", "#00cc00", "#999999", "#000000", "#0000ff", "#ff00ff"];
+    
+      
+       let draw = document.getElementById('first');
+      let block = draw.getContext("2d");
+      let quantity = prompt("Скільки кіл хочете побачити", "");
+      for (let i = 0; i<quantity; i++){
+        x = Math.floor(Math.random()*800);
+        y = Math.floor(Math.random()*800);
+        let radius = Math.floor(Math.random()*100+10); 
+     let rand = Math.floor(Math.random()*colors.length);
+        block.beginPath()
+      block.arc(x,y,radius, 0*Math.PI,Math.PI*2, false);
+      block.closePath()
+      block.fillStyle = colors[rand]
+      block.fill()
+      }
+      </script>
+</body>
+</html> 

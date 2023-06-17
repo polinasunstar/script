@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Гра "Вгадай число"</title>
+</head>
+<style>
+	body {
+		background-color: yellow;;
+	}
+	h2 {
+		text-align:center;
+		color: red;
+		font-size: 40px;
+	}
+	.number {
+		margin-left: 45%;
+		width: 300px;
+		height: 30px;
+		margin-top: 250px;
+	}
+	hr {
+		width: 650px;
+		margin-top: 270px;
+	}
+</style>
+<body>
+	<h2>Гра "Вгадай число"</h2>
+	<form name="game" action="javascript:number()">
+	<input class="number" type="text" name="block" value="">
+	<input id="result" type="submit" value="ОК!">
+</form>
+	<hr>
+	<span id="out"></span>
+<script type="text/javascript">
+	function number() {
+	
+	let numUser= +document.game.block.value;
+	let num =  Math.round((Math.random()*100));
+	let sol = document.getElementById("out");
+	let string = '';
+	do {
+		 if (+numUser>num) {
+		string="Ваше число більше";
+	}
+	else if (+numUser<num) {
+		string="Ваше число менше";
+	}
+	else {
+		string="Ура!!! Ви вгадали!!!";
+	}
+	sol.innerHTML = string
+}
+	}
+</script>
+</body>
+</html>

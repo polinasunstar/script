@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квадратне рівняння</title>
+</head>
+<style>
+    p {
+        text-align: center;
+        color: green;
+        font-size: 40px;
+    }
+    .block {
+        width: 50px;
+        height: 50px;
+    }
+    .complete {
+        margin-left: 45%;
+    }
+</style>
+<body>
+    <p>Загальний вигляд квадратного рівняння: ax<sup>2</sup>+bx+c=0</p>
+    <form class="complete" name="form">
+        <input class="block" name="a" type="text" value="">x<sup>2</sup> + 
+        <input class="block" name="b" type="text" value=""> <sup>2</sup> + 
+        <input class="block" name="c" type="text" value=""> = 0
+        <span id="out"></span>
+    </form>
+    <script type="text/javascript">
+        let a = document.form.a.value;
+        let b = document.form.b.value;
+        let c = document.form.a.value;
+        let sol = document.getElementById("out");
+        let string = ' ';
+        let D = b*b-4*a*c
+        if (D>0) {
+            string = 'Рівняння має 2 розвязки';
+            let x1 = -b + Math.sqrt(D)
+        }
+        else if (D<0) {
+
+            string = 'Рівняння не має розвязків';
+        }
+        else if (D=0) {
+            string = 'Рівняння має 1 розвязок';
+        }
+    </script>
+</body>
+</html>

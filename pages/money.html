@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bank</title>
+</head>
+<style type="text/css">
+	body {
+		background-color: lightgreen;
+	}
+	.block {
+		height: 40px;
+		width: 300px;
+		text-align: center;
+		color: blue;
+		font-size: 29px;
+		margin-top: 30px;
+		margin-left:250px;
+	}
+	#result {
+		height: 45px;
+		font-size: 32px;
+		margin-top: 20px;
+		margin-left: 128px;
+	}
+	div {
+		width: 980px;
+	    height: 550px;
+	    background-color: lightblue; 
+	    border: solid 1px black;
+	    color: blue;
+	    margin-top: 15px;
+	    margin-left: 480px;
+	    border-radius: 20px;
+	    margin-bottom: 50px;
+	    font-size: 50px;
+	    text-align: center;
+	}
+	.submit {
+		width: 160px;
+		height: 160px;
+		border-radius: 50%;
+		background-color: rgb(255, 77, 0);
+		color: white;
+		font-size: 24px;
+		margin-left: 460px;
+		border: black solid 3px;
+		margin-bottom: 00px;
+	}
+	.submit:hover {
+		background-color: red;
+	}
+</style>
+<body>
+<div>
+	<span id="display" style="padding: 15px">Добрий день. Введіть необхідну суму грошей нижче</span>
+</div>
+
+<form name="bank" action="javascript:bank()"> 
+	
+	<input class="block" type="text" name="money" value="" ><br>
+	<button class="submit"  role="button">Підтвердити</button>
+
+</form>
+<script type="text/javascript">
+	function bank() {
+	let money=+document.bank.money.value;
+	let sol=document.getElementById("display");
+	let string = "";
+	if (money < 50 || money > 10000) {
+	string += "На жаль, Ви можете зняти гроші на суму від 50 грн. до 10000 грн";
+	}
+	else if (money % 50) {
+		string += "У нас немає таких купюр";
+	}
+    else {
+		string += "Заберіть Ваші гроші у сумі "+money+" гривень.";
+	}
+	
+sol.innerHTML = string;
+}
+
+</script>
+</body>
+</html>

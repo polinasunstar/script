@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Switch Case</title>
+</head>
+<style>
+	p {
+		color: green;
+		text-align: center;
+		font-size: 40px;
+	}
+	.main {
+		height: 50px;
+		width: 100px;
+		font-size: 20px;
+		text-align: center;
+		margin-left: 48%;
+	}
+
+
+.button-18 {
+  align-items: center;
+  background-color: #0A66C2;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+.button-18:hover,
+.button-18:focus { 
+  background-color: #16437E;
+  color: #ffffff;
+}
+
+.button-18:active {
+  background: #09223b;
+  color: rgb(255, 255, 255, .7);
+}
+
+.button-18:disabled { 
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+}
+span {
+	font-size: 40px;
+	margin-top: 100px;
+	text-align: center;
+	color: green;
+}
+</style>
+<body>
+	<p>Яка це пора року? Введіть порядковий номер місяця</p>
+	<form name="form" action="javascript:season()">
+		<input type="text" class="main" name="season" value="">
+		<button class="button-18" role="button" onclick="season()">Підтвердити</button>
+	</form>
+	<span id="out"></span>
+<script type="text/javascript">
+	function season() {
+let season = +document.form.season.value;
+let sol = document.getElementById("out");
+let string = ' ';
+switch(season) {
+	case 1:
+	case 2:
+	case 12:
+	string +="Зима";
+	break;
+	case 3:
+	case 4:
+	case 5:
+	string +="Весна";
+	break;
+	case 6:
+	case 7:
+	case 8:
+	string +="Літо";
+	break;
+	case 9:
+	case 10:
+    case 11:
+    string +="Осінь";
+    break;
+    default:
+    string +="Це не пора року!";
+    break;
+}
+sol.innerHTML = string;
+ }
+ season();
+</script>
+</body>
+</html>

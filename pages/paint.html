@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="block" width="400px" height="400px" style="border: 1px solid black;"></canvas>
+    <script type="text/javascript">
+        let c = document.getElementById("block");
+        let cxt = c.getContext("2d")
+        //Голова
+        cxt.beginPath();
+        cxt.arc(200, 200, 70, Math.PI*0, Math.PI*2, false); 
+        cxt.closePath(); 
+        cxt.fillStyle = "#ffb3ff";
+        cxt.fill();
+        //Перше вухо
+        cxt.beginPath();
+        cxt.arc(130, 115, 40, Math.PI*0, Math.PI*2, false); 
+        cxt.closePath();
+        cxt.fillStyle = "#ffff99";
+        cxt.fill();
+        //Друге вухо
+        cxt.beginPath();
+        cxt.arc(267, 115, 40, Math.PI*0, Math.PI*2, false); 
+        cxt.closePath();
+        cxt.fillStyle = "#ffff99";
+        cxt.fill();
+        //Перше око
+        cxt.beginPath();
+        cxt.arc(240, 168, 15, Math.PI*0, Math.PI*2, false); 
+        cxt.closePath();
+        cxt.fillStyle = "black";
+        cxt.fill();
+        //Друге око
+        cxt.beginPath();
+        cxt.arc(167, 171, 15, Math.PI*0, Math.PI*2, false); 
+        cxt.closePath();
+        cxt.fillStyle = "black";
+        cxt.fill();
+        //Ніс
+        cxt.beginPath();
+        cxt.moveTo(75,50); 
+        cxt.lineTo(); 
+        cxt.lineTo(192, 189); 
+        cxt.fill(); 
+
+    </script>
+</body>
+</html>
